@@ -1,0 +1,29 @@
+package maven;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.JavascriptExecutor;
+
+public class mavendemo {
+
+	public static void main(String[] args) {
+
+	System.setProperty("webdriver.chrome.driver", "E:\\batch220\\webdriver\\chromedriver.exe");
+		
+	WebDriver driver = new ChromeDriver();
+	driver.manage().window().maximize();
+	JavascriptExecutor js = (JavascriptExecutor)driver;
+	driver.get("https://www.google.com/");
+	driver.findElement(By.name("q")).sendKeys("youtube" , Keys.ENTER);
+	driver.findElement(By.xpath("//*[@id=\"rso\"]/div[1]/div/div/div/div/div/div/div/div[1]/div/a/h3")).click();
+	driver.findElement(By.name("search_query")).sendKeys("bmht");
+	driver.findElement(By.id("search-icon-legacy")).sendKeys(Keys.ENTER);
+	driver.findElement(By.xpath("//*[@id=\"video-title\"]/yt-formatted-string")).click();
+	driver.getTitle();
+	//System.out.println(g)
+	driver.close();
+	}
+
+}
